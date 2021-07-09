@@ -251,6 +251,7 @@ img {
   font-size: var(--big-font-size);
   color: var(--white-color);
   line-height: .8;
+  margin-right: var(--mb-2);
 }
 
 /* ===== ABOUT =====*/
