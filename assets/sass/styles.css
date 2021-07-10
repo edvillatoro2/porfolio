@@ -10,7 +10,7 @@
 /*===== Color =====*/
 :root {
   --bg-color: linear-gradient(90deg, rgba(110,61,177,1) 0%, rgba(0,0,0,1) 100%);
-  --white-color: #FAFAFF;
+  --light-color: #FAFAFF;
   --dark-color: #6e3db1;
   --text-color: #000;
 }
@@ -179,11 +179,11 @@ img {
 }
 
 .nav__logo {
-  color: var(--white-color);
+  color: var(--light-color);
 }
 
 .nav__toggle {
-  color: var(--white-color);
+  color: var(--light-color);
   font-size: 1.5rem;
   cursor: pointer;
   z-index: 3;
@@ -221,7 +221,7 @@ img {
   -ms-flex-item-align: end;
       align-self: flex-end;
   font-size: var(--big-font-size);
-  color: var(--white-color);
+  color: var(--light-color);
   line-height: .8;
 }
 
@@ -241,7 +241,7 @@ img {
           writing-mode: vertical-lr;
   -webkit-transform: rotate(-180deg);
           transform: rotate(-180deg);
-  color: var(--white-color);
+  color: var(--light-color);
 }
 
 .home__title-right {
@@ -249,7 +249,7 @@ img {
   right: 0;
   bottom: 0;
   font-size: var(--big-font-size);
-  color: var(--white-color);
+  color: var(--light-color);
   line-height: .8;
   margin-right: var(--mb-2);
 }
@@ -309,7 +309,7 @@ img {
   margin-right: var(--mb-2);
   margin-bottom: var(--mb-3);
   padding: .25rem .5rem;
-  background-color: var(--white-color);
+  background-color: var(--light-color);
   border-radius: .25rem;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -317,7 +317,7 @@ img {
 
 .skills__name:hover {
   background: var(--bg-color);
-  color: var(--white-color);
+  color: var(--light-color);
 }
 
 .skills__img img {
@@ -325,10 +325,6 @@ img {
 }
 
 /* ===== PORTFOLIO =====*/
-.portfolio {
-  background-color: var(--white-color);
-}
-
 .portfolio__container {
   justify-items: center;
   row-gap: 2rem;
@@ -347,6 +343,19 @@ img {
   bottom: 0;
 }
 
+.portfolio__card {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio__card img {
+  border-radius: .5rem;
+}
+
+.portfolio__card:hover .portfolio__link {
+  bottom: 0;
+}
+
 .portfolio__link {
   position: absolute;
   bottom: -100%;
@@ -355,6 +364,10 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -414,7 +427,7 @@ img {
 .contact__button {
   display: block;
   background: var(--bg-color);
-  color: var(--white-color);
+  color: var(--light-color);
   padding: .75rem 2.5rem;
   margin-left: auto;
   border-radius: .5rem;
@@ -435,7 +448,7 @@ img {
 
 .footer__title {
   font-size: var(--normal-font-size);
-  color: var(--white-color);
+  color: var(--light-color);
   margin-bottom: var(--mb-2);
 }
 
@@ -498,13 +511,13 @@ img {
     display: none;
   }
   .nav__link {
-    color: var(--white-color);
+    color: var(--light-color);
   }
   .nav__link:hover {
-    color: var(--white-color);
+    color: var(--light-color);
   }
   .active::after {
-    background-color: var(--white-color);
+    background-color: var(--light-color);
   }
   .home__container {
     height: 100vh;
@@ -739,5 +752,60 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+/* ===== TABS =====*/
+.container--tabs {
+  margin: var(--mb-2);
+}
+
+.container--tabs .nav-tabs {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container--tabs .nav-tabs li a {
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: var(--dark-color);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.container--tabs .nav-tabs li a:hover {
+  background-color: #efefef;
+  opacity: 1;
+}
+
+.container--tabs .nav-tabs li.active > a,
+.container--tabs .nav-tabs li.active > a:hover,
+.container--tabs .nav-tabs li.active > a:focus {
+  color: white;
+  cursor: pointer;
+  background: var(--bg-color);
+}
+
+.container--tabs .tab-content {
+  width: 100%;
+}
+
+.container--tabs .tab-content .tab-pane {
+  display: none;
+}
+
+.container--tabs .tab-content .tab-pane.active {
+  border-radius: 5px;
+  padding: var(--mb-2);
+  background-color: var(--light-color);
+}
+
+.container--tabs .tab-content .active {
+  display: block;
 }
 /*# sourceMappingURL=styles.css.map */
